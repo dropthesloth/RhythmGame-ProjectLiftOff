@@ -84,6 +84,7 @@ public class Player : Unit
 
         if (_hpPrevAmount > HP)
         {
+            SoundManager.PlayOnce("PlayerDamage");
             _hpPrevAmount = HP;
             Camera.Shake();
             _isImmortal = true;
@@ -153,7 +154,8 @@ public class Player : Unit
     }
     private void StartDash() 
     {
-        _isDashing = true;
+        SoundManager.PlayOnce("Dash");
+        _isDashing = true;      
         _dashDestination = new Vector2
         (
              x + DASH_POWER * _lastDirection.x,

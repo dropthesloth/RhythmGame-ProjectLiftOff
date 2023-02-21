@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class HorizontalList : Sprite
 {
+    
     private int _chosenElement = 0;
     public int ChosenElement 
     { 
@@ -72,6 +73,10 @@ public class HorizontalList : Sprite
                 else
                     _isMoving = false;
             }
+        if (Input.GetKeyDown(Key.SPACE))
+        {
+            SoundManager.PlayOnce("Click");
+        }
     }
     private void OnDestroy()
     {
